@@ -1,3 +1,8 @@
+## initial command (memo)
+
+❯ yarn create react-app jbook --template typescript
+❯ git remote add origin git@github.com:blackraccoon000/jbook.git
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

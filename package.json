@@ -39,5 +39,12 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "main": "index.js",
+  "repository": "git@github.com:blackraccoon000/jbook.git",
+  "author": "Yutaka Fujii <yutakaf@playwell.site>",
+  "license": "MIT",
+  "engines": {
+    "node": "14.17.0"
   }
 }
