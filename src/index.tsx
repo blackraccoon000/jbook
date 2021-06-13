@@ -1,20 +1,19 @@
+import 'bulmaswatch/superhero/bulmaswatch.min.css';
 import * as esbuild from 'esbuild-wasm';
 import { useState, useEffect, useRef } from 'react';
 import ReactDOM from 'react-dom';
 import { fetchPlugin } from './plugins/fetch-plugin';
 import { unpkgPathPlugin } from './plugins/unpkg-path-plugin';
+import CodeEditor from './components/code-editor';
 
 const App = () => {
   const [input, setInput] = useState('');
   const iframe = useRef<any>();
-
   const ref = useRef<any>();
 
   const startService = async () => {
     ref.current = await esbuild.startService({
       worker: true,
-      // wasmURL: '/esbuild-wasm/esbuild.wasm',
-      // wasmURL: '/esbuild.wasm',
       wasmURL: 'https://unpkg.com/esbuild-wasm@0.8.27/esbuild.wasm',
     });
   };
@@ -67,9 +66,15 @@ const App = () => {
 
   return (
     <div>
+      <CodeEditor
+        initialValue="const a = 1;"
+        onChange={(value) => setInput(value)}
+      />
       <textarea
         value={input}
-        onChange={(e) => setInput(e.target.value)}
+        onChange={(e) => {
+          setInput(e.target.value);
+        }}
       ></textarea>
       <div>
         <button onClick={onClick}>Submit</button>
