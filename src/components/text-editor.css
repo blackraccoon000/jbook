@@ -28,6 +28,12 @@
   font-style: italic;
 }
 
+.text-editor.card {
+  align-items: center;
+  display: flex;
+  height: 100px;
+}
+
 .text-editor .wmde-markdown hr {
   border-top: 1px solid #dee5ed;
 }
@@ -65,4 +71,9 @@
 
 .text-editor .token.list.punctuation {
   background-color: unset;
+}
+
+.card-container {
+  position: relative;
+  left: 30px;
 }
