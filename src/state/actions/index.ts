@@ -42,8 +42,11 @@ export type BundleStartAction = {
 export type BundleCompleteAction = {
   type: ActionType.BUNDLE_COMPLETE;
   payload: {
-    code: string;
-    error: string;
+    cellId: string;
+    bundle: {
+      code: string;
+      error: string;
+    };
   };
 };
 
