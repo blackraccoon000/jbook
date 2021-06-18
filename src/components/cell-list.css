@@ -1,0 +1,15 @@
+.cell-list {
+  margin: 0 25px 50vh;
+}
+
+.react-draggable-transparent-selection .cell-list {
+  margin-bottom: 100vh;
+}
+
+.github-link {
+  display: flex;
+  justify-content: center;
+  margin: 30px 0;
+  border-top: solid 1px;
+  padding: 10px;
+}

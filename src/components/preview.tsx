@@ -1,5 +1,5 @@
-import { useRef,useEffect } from 'react';
-import "./preview.css"
+import { useRef, useEffect } from 'react';
+import './preview.css';
 
 interface PreviewProps {
   code: string;
@@ -35,16 +35,16 @@ const html = `
 </html>
 `;
 
-
 const Preview: React.FC<PreviewProps> = ({ code, bundlingStatus }) => {
   const iframe = useRef<any>();
 
   useEffect(() => {
     iframe.current.srcdoc = html;
-    setTimeout(()=>{
-      iframe.current.contentWindow.postMessage(code, '*');
-    }, 50)
-  },[code])
+  }, [code]);
+
+  const loadHandler = () => {
+    iframe.current.contentWindow.postMessage(code, '*');
+  };
 
   return (
     <div className="preview-wrapper">
@@ -53,10 +53,11 @@ const Preview: React.FC<PreviewProps> = ({ code, bundlingStatus }) => {
         ref={iframe}
         srcDoc={html}
         sandbox="allow-scripts"
+        onLoad={loadHandler}
       />
       {bundlingStatus && <div className="preview-error">{bundlingStatus}</div>}
     </div>
-  )
-}
+  );
+};
 
-export default Preview
+export default Preview;

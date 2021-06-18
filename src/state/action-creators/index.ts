@@ -45,7 +45,6 @@ export const insertCellAfter = (
   id: string | null,
   type: CellTypes
 ): InsertCellAfterAction => {
-  console.log(id);
   return {
     type: ActionType.INSERT_CELL_AFTER,
     payload: {
